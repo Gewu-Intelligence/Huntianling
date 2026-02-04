@@ -7,8 +7,8 @@ Gnexus是一套面向智能药物研发的 多智能体技能（Skills）体系�
 ### 1. Clone the project
 
 ```bash
-git clone xxxx
-cd xxxx
+git clone https://github.com/Gewu-Intelligence/Gnexus
+cd Gnexus/
 ```
 
 ### 2. 设置conda环境
