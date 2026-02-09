@@ -1,6 +1,8 @@
 # Gnexus
 
-[English](README.md) | [简体中文](README.zh.md) 
+<img src="./docs/logo.svg" alt="logo" style="display:inline; vertical-align:middle, horizental-align:right; height:3em;" />
+[English](README.md) | [简体中文](README.zh.md)  
+
 
 Gnexus是一套面向智能药物研发的 多智能体技能（Skills）体系，覆盖从靶点调研与结构分析、分子生成与设计、对接与打分筛选、分子动力学模拟，到高精度 FEP 自由能计算的完整计算研发流程。各类 Agent 不再是孤立工具，而是具备明确分工、可相互协作的“专业智能角色”，能够在统一框架下自动衔接任务、共享中间结果，并与团队成员进行自然语言与结构化信息交互，实现科研流程的模块化、自动化与协同化，推动药物发现从“人工驱动”向“智能体协作驱动”演进。
 
@@ -10,8 +12,8 @@ Gnexus是一套面向智能药物研发的 多智能体技能（Skills）体系�
 
 ## 能力
 - 生物信息与结构信息调研：UniProt / PDB / 链与构象选择 / 缺失残基与配体识别
-- 专利调研：WO/US/CN 专利检索、族谱归并、关键 claim/结构/用途提取
-- 结构文件获取与处理：PDB 下载、格式转换（mmCIF→PDB）、链拆分、加氢/补全、质子化、去水/去离子等
+- 专利调研：WO/US/CN 专利检索
+- 结构文件获取与处理：PDB 下载、格式转换、链拆分、加氢/补全、质子化、去水/去离子等
 - 蛋白准备（Protein Prep）：构象清理、残基修复、选择 apo/holo、能量最小化
 - 分子动力学（MD）：体系构建、短程 relax / 生产模拟、轨迹与能量输出
 - 口袋预测：几何/能量/深度打分
@@ -19,13 +21,14 @@ Gnexus是一套面向智能药物研发的 多智能体技能（Skills）体系�
 - 小分子准备（Ligand Prep）：去盐、立体异构、质子化/互变异构、3D构象、SDF输出
 - 分子对接（Docking）：定义网格、对接打分、pose筛选
 - FEP：相对/绝对自由能流程管理、拓扑映射、结果汇总
-- 合成路线预测：逆合成拆解、可购原料、步骤与风险点总结
+- 合成路线预测：逆合成拆解
 - 沟通与协作：邮件撰写（内部药化审核/外部供应商询价）
 - 入库：化合物与项目元数据结构化写入数据库（注册号/批次/属性/来源等）
 
+
 ## 安装
 
-### Clone the project
+### 下载
 
 ```bash
 git clone https://github.com/Gewu-Intelligence/Gnexus
@@ -99,3 +102,36 @@ pip install rdkit==2024.3.2 ipykernel pandas python-box OpenNMT-py==1.2.0 torchd
 pip install .
 ```
 模型使用的权重需单独下载，请参见[RXNGraphormer](https://github.com/licheng-xu-echo/RXNGraphormer)
+
+
+## 示例
+
+<div align="center">
+<img src="./docs/wciki-bm6ev.gif" alt="main_flowchart" width="80%" />
+</div>
+
+更多示例请参考[示例文档](example/example.md)
+
+* 下载pdb
+```
+下载 8S99 的 PDB（存为 .pdb，输出到 ./pdb）
+```
+
+* 结构准备
+```
+准备蛋白（输入 ./pdb/8S99.pdb，输出到 ./pdb）
+```
+* MD
+```
+运行MD模拟（10000 步；输入 ./pdb/protein_A_apo.pdb.pdb；输出到 ./md）
+```
+
+* 预测结合口袋
+```
+预测结合口袋（输入 ./pdb/protein_A_apo.pdb.pdb；输出到 ./pocket/）
+```
+
+* ADMET
+```
+预测example/generation/SMILES.csv的admet
+```
