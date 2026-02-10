@@ -1,4 +1,4 @@
-# Nezha
+# Huntianling
 
 [English](README.md) | [简体中文](README.zh.md) | [视频](https://www.bilibili.com/video/BV19CcTzFEH4)
 
@@ -41,15 +41,15 @@ Nezha is an integrated multi-agent skills system designed for AI-driven drug dis
 #### 1. Clone the project
 
 ```bash
-git clone https://github.com/Gewu-Intelligence/Nezha
-cd Nezha
+git clone https://github.com/Gewu-Intelligence/Huntianling
+cd Huntianling
 ```
 
 #### 2. Create a conda environment
 
 ```bash
 conda env create -f environment.yml
-conda activate nezha
+conda activate huntianling
 ```
 
 #### 3. Install OpenCode
