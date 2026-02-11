@@ -1,4 +1,4 @@
-name: gnexus
+name: huntianling
 channels:
   - conda-forge
   - defaults
